@@ -4,6 +4,7 @@ docker build -t coreresearch:latest .
 ```
 
 # Avvio del container con il workspace montato
+Configurare run.sh in modo da montare i volumi nei path corretti
 ```bash
 chmod +x run.sh
 ./run.sh
