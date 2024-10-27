@@ -1,2 +1,3 @@
 bagfiles/quad-easy.bag 
 catkin_ws/build/*
+catkin_ws_ov/*
