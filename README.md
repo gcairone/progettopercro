@@ -1,6 +1,6 @@
 # Costruzione iniziale dell'immagine
 ```bash
-docker build -t coreresarch:latest .
+docker build -t coreresearch:latest .
 ```
 
 # Avvio del container con il workspace montato
