@@ -1,3 +1,4 @@
+## Guida
 # Costruzione iniziale dell'immagine
 Assicurarsi che il Dockerfile sia preparato e nella directory corrente
 ```bash
