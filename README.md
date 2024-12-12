@@ -1,14 +1,17 @@
-## Guida
-# Costruzione iniziale dell'immagine
-Assicurarsi che il Dockerfile sia preparato e nella directory corrente
+# Guida
+Clonare questa repo, controllare che il Dockerfile sia preparato e nella directory corrente, costruire l'immagine
 ```bash
+git clone https://github.com/gcairone/progettopercro/
 docker build -t coreresearch:openvins .
 ```
-
-
-# Se si vuole usare openvins con il suo dataset di esempio
-Clonare la repo openVINS
-Compilare la repo
+Creare catkin_ws_ov (attenzione al path), clonare la repo
+```bash
+mkdir -p ~/progettopercro/catkin_ws_ov/src/
+cd ~/progettopercro/catkin_ws_ov/src/
+git clone https://github.com/rpng/open_vins/
+```
+Creare ~/progettopercro/bagfiles/ con dentro quad-easy.bag, V1_01_easy.bag
+Creare il container con run_openvins.sh, compilare il progetto
 ```bash
 chmod +x run_openvins.sh
 ./run_openvins.sh
