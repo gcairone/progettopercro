@@ -30,3 +30,18 @@ RUN apt-get update && \
     apt-get install -y alphasense-driver-core alphasense-viewer alphasense-firmware ros-noetic-alphasense-driver-ros ros-noetic-alphasense-driver && \
     apt-get install -y libopencv-dev python3-opencv && \
     rm -rf /var/lib/apt/lists/*
+
+# install packages for openvins
+RUN apt-get update && \
+apt-get install -y python3-catkin-tools \
+                   ros-noetic-cv-bridge \
+                   libcereal-dev \
+                   libceres-dev \
+                   ros-noetic-rviz \
+                   ros-noetic-image-transport-plugins && \
+rm -rf /var/lib/apt/lists/*
+
+# build openvins
+WORKDIR /root/catkin_ws_ov/
+RUN catkin clean -y 
+RUN catkin build -j1 -p1

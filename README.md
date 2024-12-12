@@ -1,29 +1,47 @@
 # Costruzione iniziale dell'immagine
+Assicurarsi che il Dockerfile sia preparato e nella directory corrente
 ```bash
-docker build -t coreresearch:latest .
+docker build -t coreresearch:openvins .
 ```
 
-# Avvio del container con il workspace montato
-Configurare run.sh in modo da montare i volumi nei path corretti
+
+# Se si vuole usare openvins con il suo dataset di esempio
+Clonare la repo openVINS
+Compilare la repo
 ```bash
-chmod +x run.sh
-./run.sh
+chmod +x run_openvins.sh
+./run_openvins.sh
+catkin clean -y
+catkin build -j1 -p1
+```
+In un primo terminale avvia il master
+```bash
+roscore
 ```
 
-# Nel container, se si vuole usare rviz
+In un secondo terminale lanciare il pacchetto
 ```bash
-sudo apt install ros-noetic-rviz
-sudo apt install ros-noetic-image-transport-plugins
-source /opt/ros/noetic/setup.bash
-rviz
-```
-Da rviz si riescono a vedere Camera e ground truth, ma non i dati IMU
+source devel/setup.bash 
+roslaunch ov_msckf subscribe.launch config:=euroc_mav dolivetraj:=true
 
-# Se si vuole vedere lo stream di Camera e Imu senza rviz
-Usare il nodo viewer.py del pacchetto image_viewer, nel container:
-```bash
-cd /root/catkin_ws
-catkin_make
-source devel/setup.bash
-rosrun image_viewer viewer.py
 ```
+
+In un terzo terminale lanciare rviz
+```bash
+cd ~/catkin_ws_ov/src/open_vins/launch
+rviz -d display.rviz
+```
+
+In un quarto terminale lanciare lo stream di dati dal bag file
+```bash
+cd ~/bagfiles
+rosbag play V1_01_easy.bag
+```
+Se invece si vuole lanciare il quad-easy dataset
+```bash
+cd ~/bagfiles
+rosparam set image_transport compressed
+rosrun image_transport republish compressed in:=/alphasense_driver_ros/cam0 raw out:=/cam0/image_raw & rosrun image_transport republish compressed in:=/alphasense_driver_ros/cam1 raw out:=/cam1/image_raw & rosbag play quad-easy.bag /alphasense_driver_ros/imu:=/imu0
+```
+
+Si dovrebbe iniziare a vedere tutto nell'interfaccia rviz
