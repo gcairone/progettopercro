@@ -41,7 +41,4 @@ apt-get install -y python3-catkin-tools \
                    ros-noetic-image-transport-plugins && \
 rm -rf /var/lib/apt/lists/*
 
-# build openvins
-WORKDIR /root/catkin_ws_ov/
-RUN catkin clean -y 
-RUN catkin build -j1 -p1
+

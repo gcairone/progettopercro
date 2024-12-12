@@ -11,7 +11,7 @@ cd ~/progettopercro/catkin_ws_ov/src/
 git clone https://github.com/rpng/open_vins/
 ```
 Creare ~/progettopercro/bagfiles/ con dentro quad-easy.bag, V1_01_easy.bag
-Creare il container con run_openvins.sh, compilare il progetto
+Creare ed entrare nel container con run_openvins.sh, compilare il progetto (se non trova catkin installare python3-catkin-tools)
 ```bash
 chmod +x run_openvins.sh
 ./run_openvins.sh
