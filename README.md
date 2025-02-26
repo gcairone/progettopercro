@@ -51,3 +51,30 @@ rosrun image_transport republish compressed in:=/alphasense_driver_ros/cam0 raw 
 ```
 
 Si dovrebbe iniziare a vedere tutto nell'interfaccia rviz
+
+
+# Per usare con HW reale
+Verificare che in catkin_ws_ov/src/open_vins/config/euroc_mav ci siano estimator_config_coreresearch.yaml e i file correlati
+
+Verificare che in catkin_ws_ov/src/open_vins/ov_msckf/launch/subscribe.launch, ci sia estimator_config_coreresearch.yaml come config_path
+
+
+Fare in terminali diversi
+```bash
+roscore
+```
+```bash
+source devel/setup.bash 
+roslaunch ov_msckf subscribe.launch config:=euroc_mav dolivetraj:=true
+
+```
+```bash
+cd ~/catkin_ws_ov/src/open_vins/ov_msckf/launch
+rviz -d display.rviz
+```
+
+```bash
+rosrun alphasense_driver_ros alphasense_driver_ros 
+```
+
+rosrun alphasense_driver_ros alphasense_driver_ros 
