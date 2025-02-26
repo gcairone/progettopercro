@@ -5,7 +5,7 @@ docker run \
 -e DISPLAY=unix$DISPLAY \
 --env="QT_X11_NO_MITSSH=1" \
 --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
--v ~/progettopercro/catkin_ws_ov:/root/catkin_ws_ov \
--v ~/progettopercro/bagfiles:/root/bagfiles \
+-v ~/Desktop/progettopercro/catkin_ws_ov:/root/catkin_ws_ov \
+-v ~/Desktop/progettopercro/bagfiles:/root/bagfiles \
 --net=host \
 coreresearch:openvins bash
