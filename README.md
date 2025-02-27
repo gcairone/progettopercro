@@ -57,7 +57,11 @@ Si dovrebbe iniziare a vedere tutto nell'interfaccia rviz
 
 
 ### Guida all'uso con hardware alphasense core-research
-Verificare che in catkin_ws_ov/src/open_vins/config/euroc_mav ci siano estimator_config_coreresearch.yaml e i file correlati
+Verificare che l'hardware funzioni e sia collegato:
+```bash
+alphasense list
+```
+Verificare che in catkin_ws_ov/src/open_vins/config/euroc_mav ci siano estimator_config_coreresearch.yaml e i file correlati (parametri di calibrazione)
 
 Verificare che in catkin_ws_ov/src/open_vins/ov_msckf/launch/subscribe.launch, ci sia estimator_config_coreresearch.yaml come config_path
 
