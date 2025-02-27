@@ -1,4 +1,7 @@
-# Guida
+# Visual-Inertial Odometry Project
+
+
+### Guida all'uso con dataset .bag di esempio
 Clonare questa repo, controllare che il Dockerfile sia preparato e nella directory corrente, costruire l'immagine
 ```bash
 git clone https://github.com/gcairone/progettopercro/
@@ -53,7 +56,7 @@ rosrun image_transport republish compressed in:=/alphasense_driver_ros/cam0 raw 
 Si dovrebbe iniziare a vedere tutto nell'interfaccia rviz
 
 
-# Per usare con HW reale
+### Guida all'uso con hardware alphasense core-research
 Verificare che in catkin_ws_ov/src/open_vins/config/euroc_mav ci siano estimator_config_coreresearch.yaml e i file correlati
 
 Verificare che in catkin_ws_ov/src/open_vins/ov_msckf/launch/subscribe.launch, ci sia estimator_config_coreresearch.yaml come config_path
