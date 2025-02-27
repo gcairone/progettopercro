@@ -63,18 +63,19 @@ Fare in terminali diversi
 ```bash
 roscore
 ```
+Lanciare openVINS con il file subscribe.launch
 ```bash
 source devel/setup.bash 
 roslaunch ov_msckf subscribe.launch config:=euroc_mav dolivetraj:=true
 
 ```
+Lanciare il driver ros dell'HW alphasense
+```bash
+rosrun alphasense_driver_ros alphasense_driver_ros 
+```
+Per visualizzare l'odometria:
 ```bash
 cd ~/catkin_ws_ov/src/open_vins/ov_msckf/launch
 rviz -d display.rviz
 ```
-
-```bash
-rosrun alphasense_driver_ros alphasense_driver_ros 
-```
-
-rosrun alphasense_driver_ros alphasense_driver_ros 
+Per far partire l'odometria bisogna dare un jerk minimo 
