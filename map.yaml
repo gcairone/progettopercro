@@ -1,0 +1,13 @@
+aruco_map:
+  markers:
+    - id: 0
+      position: [0.055, 0.0, 0.0]  
+      orientation: [0.0, 0.0, 0.0]  
+
+    - id: 1
+      position: [0.255, 0.0, 0.0]  
+      orientation: [0.0, 0.0, 0.0]  
+
+    - id: 2
+      position: [0.455, 0.0, 0.0]  
+      orientation: [0.0, 0.0, 0.0]  
