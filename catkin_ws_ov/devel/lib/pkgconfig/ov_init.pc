@@ -1,0 +1,1 @@
+/root/catkin_ws_ov/devel/.private/ov_init/lib/pkgconfig/ov_init.pc

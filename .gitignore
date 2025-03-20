@@ -1,3 +1,4 @@
 bagfiles/*
-catkin_ws_ov/*
+catkin_ws_ov/build/*
+catkin_ws_ov/logs/*
 scripts/images/*

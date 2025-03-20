@@ -1,0 +1,9 @@
+open_vins/ov_core
+/root/catkin_ws_ov/devel/.private/ov_core/cmake.lock /root/catkin_ws_ov/devel/./cmake.lock
+/root/catkin_ws_ov/devel/.private/ov_core/lib/libov_core_lib.so /root/catkin_ws_ov/devel/lib/libov_core_lib.so
+/root/catkin_ws_ov/devel/.private/ov_core/lib/pkgconfig/ov_core.pc /root/catkin_ws_ov/devel/lib/pkgconfig/ov_core.pc
+/root/catkin_ws_ov/devel/.private/ov_core/lib/ov_core/test_tracking /root/catkin_ws_ov/devel/lib/ov_core/test_tracking
+/root/catkin_ws_ov/devel/.private/ov_core/lib/ov_core/test_webcam /root/catkin_ws_ov/devel/lib/ov_core/test_webcam
+/root/catkin_ws_ov/devel/.private/ov_core/lib/ov_core/test_profile /root/catkin_ws_ov/devel/lib/ov_core/test_profile
+/root/catkin_ws_ov/devel/.private/ov_core/share/ov_core/cmake/ov_coreConfig-version.cmake /root/catkin_ws_ov/devel/share/ov_core/cmake/ov_coreConfig-version.cmake
+/root/catkin_ws_ov/devel/.private/ov_core/share/ov_core/cmake/ov_coreConfig.cmake /root/catkin_ws_ov/devel/share/ov_core/cmake/ov_coreConfig.cmake

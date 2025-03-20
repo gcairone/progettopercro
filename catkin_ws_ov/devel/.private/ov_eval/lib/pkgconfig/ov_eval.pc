@@ -1,0 +1,8 @@
+prefix=/root/catkin_ws_ov/devel/.private/ov_eval
+
+Name: ov_eval
+Description: Description of ov_eval
+Version: 2.7.0
+Cflags: -I/root/catkin_ws_ov/src/open_vins/ov_eval/src/
+Libs: -L${prefix}/lib -lov_eval_lib
+Requires: roscpp rospy geometry_msgs nav_msgs sensor_msgs ov_core
