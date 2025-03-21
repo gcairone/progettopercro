@@ -3,10 +3,8 @@ import numpy as np
 import glob
 import yaml
 import random 
-chessboard_size = (5, 8)  
-square_size = 0.030
-
-max_images = 50
+chessboard_size = (5, 7)  
+square_size = 0.04375
 
 objp = np.zeros((chessboard_size[0] * chessboard_size[1], 3), np.float32)
 objp[:, :2] = np.mgrid[0:chessboard_size[0], 0:chessboard_size[1]].T.reshape(-1, 2) * square_size
@@ -14,15 +12,21 @@ objp[:, :2] = np.mgrid[0:chessboard_size[0], 0:chessboard_size[1]].T.reshape(-1,
 tobjpoints = []  
 timgpoints = []  
 
-images = glob.glob('images/left00*.jpg')
+images = glob.glob('images_2/*.jpg')
 random.shuffle(images)
-images = images[:10]
-
+images = images[:50]
+gray = None
+criteria = (cv2.TERM_CRITERIA_EPS + cv2.TermCriteria_COUNT, 40, 0.001)
 for fname in images:
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
     ret, corners = cv2.findChessboardCorners(gray, chessboard_size, None)
+    try:
+        corners = cv2.cornerSubPix(gray, corners, (5, 5), (-1, 1), criteria)
+    except:
+        print(f"skipping image {fname}")
+        continue
     
     if ret:
         tobjpoints.append(objp)
@@ -30,15 +34,17 @@ for fname in images:
         
         cv2.drawChessboardCorners(img, chessboard_size, corners, ret)
         cv2.imshow('Chessboard', img)
-        cv2.waitKey(500)
+        cv2.waitKey(5)
 
 cv2.destroyAllWindows()
-
+flags = cv2.CALIB_FIX_ASPECT_RATIO or cv2.CALIB_RATIONAL_MODEL
 ret, mtx, dist, rvecs, tvecs, stdi, stde, pve = cv2.calibrateCameraExtended(
     tobjpoints, 
     timgpoints, 
     gray.shape[::-1], 
-    flag=CALIB_FIX_ASPECT_RATIO 
+    None,
+    None,
+    flags=flags
 )
 
 data = {
