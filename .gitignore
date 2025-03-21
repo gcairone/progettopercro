@@ -1,6 +1,7 @@
 bagfiles/*
 catkin_ws_ov/build/*
 catkin_ws_ov/logs/*
+catkin_ws_ov/devel/.private/*
 scripts/images/*
 scripts/images_2/*
 scripts/images_prof/*
