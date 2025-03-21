@@ -1,8 +1,0 @@
-prefix=/root/catkin_ws_ov/devel/.private/ov_init
-
-Name: ov_init
-Description: Description of ov_init
-Version: 2.7.0
-Cflags: -I/root/catkin_ws_ov/src/open_vins/ov_init/src/
-Libs: -L${prefix}/lib -lov_init_lib
-Requires: roscpp cv_bridge ov_core

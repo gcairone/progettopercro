@@ -1,8 +1,0 @@
-prefix=/root/catkin_ws_ov/devel/.private/ov_data
-
-Name: ov_data
-Description: Description of ov_data
-Version: 2.7.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

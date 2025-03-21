@@ -1,8 +1,0 @@
-prefix=/root/catkin_ws_ov/devel/.private/ov_msckf
-
-Name: ov_msckf
-Description: Description of ov_msckf
-Version: 2.7.0
-Cflags: -I/root/catkin_ws_ov/src/open_vins/ov_msckf/src/
-Libs: -L${prefix}/lib -lov_msckf_lib
-Requires: roscpp rosbag tf std_msgs geometry_msgs sensor_msgs nav_msgs visualization_msgs image_transport cv_bridge ov_core ov_init
