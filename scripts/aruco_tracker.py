@@ -8,7 +8,7 @@ from cv_bridge import CvBridge
 import cv2.aruco as aruco
 
 
-with open('camera_calibration.yaml', 'r') as file:
+with open('camera_calibration_usb.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
 # Estrai i dati e convertili in numpy arrays
@@ -19,7 +19,8 @@ dist_coeffs = np.array(data['dist_coeffs'][0], dtype=np.float32)
 
 
 map_path = "map.yaml"
-cam_topic = "/alphasense_driver_ros/cam2"
+# cam_topic = "/alphasense_driver_ros/cam2"
+cam_topic = "/usb_camera/image_raw"
 
 def load_marker_map(yaml_file):
     with open(yaml_file, 'r') as f:
@@ -90,7 +91,7 @@ class ArucoTracker:
         rospy.init_node("aruco_tracker", anonymous=True)
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber(cam_topic, Image, self.image_callback)
-        self.marker_length = 0.095  # 100 mm (0.1 metri)
+        self.marker_length = 0.0955  # 100 mm (0.1 metri)
         self.aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_4X4_50)
         self.parameters = aruco.DetectorParameters_create()
 
@@ -165,10 +166,13 @@ class ArucoTracker:
 
 
                 # print(f"Posizione della camera rispetto a FIX: \nTvec: {t_camera_world}, \nR: {R_camera_world}")
-            for t1 in tvec_list:
-                for t2 in tvec_list:
-                    print(f"distanza: {np.linalg.norm(t1-t2)}")
-                # print(len(tvec_list))
+            with open('logs/usbcam_small.txt', 'a') as f:
+                for t1 in tvec_list:
+                    for t2 in tvec_list:
+                        d = np.linalg.norm(t1-t2)
+                        print(f"distanza: {d}")
+                        f.write(f"{d}\n")
+                    # print(len(tvec_list))
             R_mean, t_mean = average_pose(R_t_list)
             # print(f"Pose MEDIA: \nTvec: {t_mean}, \nR: {R_mean}")
 

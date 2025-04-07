@@ -12,9 +12,9 @@ objp[:, :2] = np.mgrid[0:chessboard_size[0], 0:chessboard_size[1]].T.reshape(-1,
 tobjpoints = []  
 timgpoints = []  
 
-images = glob.glob('images_2/*.jpg')
+images = glob.glob('usb_camera_images/*.jpg')
 random.shuffle(images)
-images = images[:50]
+images = images[:100]
 gray = None
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TermCriteria_COUNT, 40, 0.001)
 for fname in images:
@@ -52,7 +52,7 @@ data = {
     'dist_coeffs': dist.tolist()
 }
 
-with open('camera_calibration.yaml', 'w') as f:
+with open('camera_calibration_usb.yaml', 'w') as f:
     yaml.dump(data, f)
 
 print("Calibrazione completata!")
