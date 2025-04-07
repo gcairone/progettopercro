@@ -1,0 +1,632 @@
+aruco_map:
+  markers:
+  - id: 0
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - 0.0
+    - 0.0
+  - id: 1
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 1.2
+    - 0.0
+    - 0.0
+  - id: 2
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 2.4
+    - 0.0
+    - 0.0
+  - id: 3
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 3.5999999999999996
+    - 0.0
+    - 0.0
+  - id: 4
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 4.8
+    - 0.0
+    - 0.0
+  - id: 5
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 6.0
+    - 0.0
+    - 0.0
+  - id: 6
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 7.199999999999999
+    - 0.0
+    - 0.0
+  - id: 7
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 8.4
+    - 0.0
+    - 0.0
+  - id: 8
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 9.6
+    - 0.0
+    - 0.0
+  - id: 9
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 10.799999999999999
+    - 0.0
+    - 0.0
+  - id: 10
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 12.0
+    - 0.0
+    - 0.0
+  - id: 11
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 13.2
+    - 0.0
+    - 0.0
+  - id: 12
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 14.399999999999999
+    - 0.0
+    - 0.0
+  - id: 13
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 15.6
+    - 0.0
+    - 0.0
+  - id: 14
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 16.8
+    - 0.0
+    - 0.0
+  - id: 15
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 18.0
+    - 0.0
+    - 0.0
+  - id: 16
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 19.2
+    - 0.0
+    - 0.0
+  - id: 17
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 20.4
+    - 0.0
+    - 0.0
+  - id: 18
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 21.599999999999998
+    - 0.0
+    - 0.0
+  - id: 19
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 22.8
+    - 0.0
+    - 0.0
+  - id: 20
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 24.0
+    - 0.0
+    - 0.0
+  - id: 21
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - 0.0
+    - 0.0
+  - id: 22
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -1.2
+    - 0.0
+  - id: 23
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -2.4
+    - 0.0
+  - id: 24
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -3.5999999999999996
+    - 0.0
+  - id: 25
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -4.8
+    - 0.0
+  - id: 26
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -6.0
+    - 0.0
+  - id: 27
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -7.199999999999999
+    - 0.0
+  - id: 28
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -8.4
+    - 0.0
+  - id: 29
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -9.6
+    - 0.0
+  - id: 30
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -10.799999999999999
+    - 0.0
+  - id: 31
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -12.0
+    - 0.0
+  - id: 32
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -13.2
+    - 0.0
+  - id: 33
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -14.399999999999999
+    - 0.0
+  - id: 34
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -15.6
+    - 0.0
+  - id: 35
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 25.2
+    - -16.8
+    - 0.0
+  - id: 36
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 24.0
+    - -16.8
+    - 0.0
+  - id: 37
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 22.8
+    - -16.8
+    - 0.0
+  - id: 38
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 21.6
+    - -16.8
+    - 0.0
+  - id: 39
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 20.4
+    - -16.8
+    - 0.0
+  - id: 40
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 19.2
+    - -16.8
+    - 0.0
+  - id: 41
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 18.0
+    - -16.8
+    - 0.0
+  - id: 42
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 16.799999999999997
+    - -16.8
+    - 0.0
+  - id: 43
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 15.6
+    - -16.8
+    - 0.0
+  - id: 44
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 14.4
+    - -16.8
+    - 0.0
+  - id: 45
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 13.2
+    - -16.8
+    - 0.0
+  - id: 46
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 12.0
+    - -16.8
+    - 0.0
+  - id: 47
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 10.8
+    - -16.8
+    - 0.0
+  - id: 48
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 9.6
+    - -16.8
+    - 0.0
+  - id: 49
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 8.399999999999999
+    - -16.8
+    - 0.0
+  - id: 50
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 7.199999999999999
+    - -16.8
+    - 0.0
+  - id: 51
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 6.0
+    - -16.8
+    - 0.0
+  - id: 52
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 4.800000000000001
+    - -16.8
+    - 0.0
+  - id: 53
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 3.6000000000000014
+    - -16.8
+    - 0.0
+  - id: 54
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 2.3999999999999986
+    - -16.8
+    - 0.0
+  - id: 55
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 1.1999999999999993
+    - -16.8
+    - 0.0
+  - id: 56
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -16.8
+    - 0.0
+  - id: 57
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -16.8
+    - 0.0
+  - id: 58
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -15.600000000000001
+    - 0.0
+  - id: 59
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -14.4
+    - 0.0
+  - id: 60
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -13.200000000000001
+    - 0.0
+  - id: 61
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -12.0
+    - 0.0
+  - id: 62
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -10.8
+    - 0.0
+  - id: 63
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -9.600000000000001
+    - 0.0
+  - id: 64
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -8.4
+    - 0.0
+  - id: 65
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -7.200000000000001
+    - 0.0
+  - id: 66
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -6.000000000000002
+    - 0.0
+  - id: 67
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -4.800000000000001
+    - 0.0
+  - id: 68
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -3.6000000000000014
+    - 0.0
+  - id: 69
+    orientation:
+    - 0.0
+    - 0.0
+    - 0.0
+    position:
+    - 0.0
+    - -2.400000000000002
+    - 0.0
