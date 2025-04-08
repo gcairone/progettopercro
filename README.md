@@ -53,20 +53,20 @@ rosrun image_transport republish compressed in:=/alphasense_driver_ros/cam0 raw 
 Si dovrebbe iniziare a vedere tutto nell'interfaccia rviz
 
 
-# Per usare con HW reale
-Verificare che in catkin_ws_ov/src/open_vins/config/euroc_mav ci siano estimator_config_coreresearch.yaml e i file correlati
-
-Verificare che in catkin_ws_ov/src/open_vins/ov_msckf/launch/subscribe.launch, ci sia estimator_config_coreresearch.yaml come config_path
+# Per usare con HW CoreResearch
 
 
 Fare in terminali diversi
 ```bash
 roscore
 ```
-Lanciare openVINS con il file subscribe.launch
+Lanciare openVINS con il file che si desidera:
+- coreresearch_stereo.launch: Configurazione che usa la coppia di stereo davanti
+- coreresearch_3mono.launch: Configurazione che usa le altre 3 camere come mono
+- coreresearch_complete.launch: Configurazione che usa coppia stereo + 3 camere mono
 ```bash
 source devel/setup.bash 
-roslaunch ov_msckf subscribe.launch config:=euroc_mav dolivetraj:=true
+roslaunch ov_msckf coreresearch_stereo.launch
 
 ```
 Lanciare il driver ros dell'HW alphasense
@@ -78,4 +78,4 @@ Per visualizzare l'odometria:
 cd ~/catkin_ws_ov/src/open_vins/ov_msckf/launch
 rviz -d display.rviz
 ```
-Per far partire l'odometria bisogna dare un jerk minimo 
+Per far partire l'odometria bisogna dare un jerk minimo all'HW. 
