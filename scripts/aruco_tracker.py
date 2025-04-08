@@ -11,14 +11,7 @@ import cv2.aruco as aruco
 with open('camera_calibration.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
-# Estrai i dati e convertili in numpy arrays
-camera_matrix = np.array(data['camera_matrix'], dtype=np.float32)
-dist_coeffs = np.array(data['dist_coeffs'][0], dtype=np.float32)
-
-
-
-
-map_path = "aruco_map_lab.yaml"
+# Estrai i dati e convertili in numpy arraysself.
 cam_topic = "/alphasense_driver_ros/cam2"
 # cam_topic = "/usb_camera/image_raw"
 
@@ -65,7 +58,7 @@ def estimatePoseSingleMarkers(corners, marker_size, mtx, distortion):
        corners, ids, rejectedImgPoints = detector.detectMarkers(image)
     corners - is an array of detected corners for each detected marker in the image
     marker_size - is the size of the detected markers
-    mtx - is the camera matrix
+    mtx - is the camera matrixmarker_map
     distortion - is the camera distortion matrix
     RETURN list of rvecs, tvecs, and trash (so that it corresponds to the old estimatePoseSingleMarkers())
     '''
@@ -152,12 +145,9 @@ class ArucoTracker:
             tvec_list = []
             # i = 0
             for i in range(len(ids)):
-                if ids[i] < 2:
-                    continue
                 rvec, tvec, _ = estimatePoseSingleMarkers(
                     corners[i], self.marker_length, camera_matrix, dist_coeffs
                 )
-                # print(np.linalg.norm(corners[i][0][1]-corners[i][0][0]))
                 tvec_list.append(tvec[0])
                 # print(f"Marker id:{ids[i]}")
                 # print(f"Posizione del marker rispetto alla camera: \nTvec: {tvec}, \nR: {rvec}")
