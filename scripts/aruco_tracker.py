@@ -91,9 +91,11 @@ class ArucoTracker:
         rospy.init_node("aruco_tracker", anonymous=True)
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber(cam_topic, Image, self.image_callback)
-        self.marker_length = 0.0159  # 100 mm (0.1 metri)
+        self.marker_length = 0.159  # 100 mm (0.1 metri)
         self.aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_6X6_250)
         self.parameters = aruco.DetectorParameters_create()
+        self.parameters.adaptiveThreshConstant = 30
+        self.parameters.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
 
         self.marker_map = self.load_marker_map(map_path)
 
@@ -138,7 +140,10 @@ class ArucoTracker:
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         corners, ids, _ = aruco.detectMarkers(gray, self.aruco_dict, parameters=self.parameters)
-        
+        if corners is not None:
+            timestamp = msg.header.stamp.to_sec()
+            print(corners, ids, f"Timestamp: {timestamp:.6f} sec")
+
         if ids is not None:
             # rospy.loginfo(f"Detected {len(ids)} markers")
             ids = ids.flatten()
@@ -152,9 +157,9 @@ class ArucoTracker:
                 rvec, tvec, _ = estimatePoseSingleMarkers(
                     corners[i], self.marker_length, camera_matrix, dist_coeffs
                 )
-                print(np.linalg.norm(corners[i][0][1]-corners[i][0][0]))
+                # print(np.linalg.norm(corners[i][0][1]-corners[i][0][0]))
                 tvec_list.append(tvec[0])
-                print(f"Marker id:{ids[i]}")
+                # print(f"Marker id:{ids[i]}")
                 # print(f"Posizione del marker rispetto alla camera: \nTvec: {tvec}, \nR: {rvec}")
 
                 # terna del marker
@@ -166,6 +171,7 @@ class ArucoTracker:
 
 
                 # print(f"Posizione della camera rispetto a FIX: \nTvec: {t_camera_world}, \nR: {R_camera_world}")
+            """
             with open('logs/usbcam_small.txt', 'a') as f:
                 for t1 in tvec_list:
                     for t2 in tvec_list:
@@ -173,16 +179,32 @@ class ArucoTracker:
                         print(f"distanza: {d}")
                         f.write(f"{d}\n")
                     # print(len(tvec_list))
-            R_mean, t_mean = average_pose(R_t_list)
+            """
+            #R_mean, t_mean = average_pose(R_t_list)
             # print(f"Pose MEDIA: \nTvec: {t_mean}, \nR: {R_mean}")
+            
 
         else:
             print("NO MARKERS DETECTED")
-        print()
         frame = cv2.undistort(frame, camera_matrix, dist_coeffs)
         cv2.imshow("Aruco Tracker", frame)
         cv2.waitKey(1)
 
+
+"""
+        if key == ord('a') and ids is not None:  
+            print("PREMUTO a")
+            timestamp = msg.header.stamp.to_sec()
+            with open('logs/aruco_corners_2.txt', 'a') as f:
+                f.write(f"Timestamp: {timestamp:.6f} sec\n")
+                for i in range(len(ids)):
+                    f.write(f"Marker ID: {ids[i]}\n")
+                    corners_str = np.array2string(corners[i], separator=', ')
+                    f.write(f"Corners:\n{corners_str}\n")
+                    f.write("-" * 40 + "\n")
+            rospy.loginfo(f"Corners salvati con timestamp {timestamp:.6f}")
+
+"""
 if __name__ == "__main__":
     try:
         ArucoTracker()
