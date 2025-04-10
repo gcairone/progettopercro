@@ -7,4 +7,3 @@ catkin_ws_ov/src/open_vins/ov_data/*
 scripts/images/*
 scripts/images_2/*
 scripts/images_prof/*
-scripts/logs/*
