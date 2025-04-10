@@ -24,7 +24,7 @@
 
     <!-- if we should viz the groundtruth -->
     <arg name="dolivetraj"  default="false" />
-    <arg name="path_gt"     default="$(find ov_data)/$(arg config)/$(arg dataset).txt" />
+    <!-- <arg name="path_gt"     default="$(find ov_data)/$(arg config)/$(arg dataset).txt" /> -->
 
     <!-- MASTER NODE! -->
 <!--    <node name="ov_msckf" pkg="ov_msckf" type="run_subscribe_msckf" output="screen" clear_params="true" required="true" launch-prefix="gdb -ex run &#45;&#45;args">-->
@@ -58,13 +58,13 @@
         </node>
     </group>
 
-    <!-- path viz of aligned gt -->
+    <!-- path viz of aligned gt 
     <group if="$(arg dolivetraj)">
         <node name="live_align_trajectory" pkg="ov_eval" type="live_align_trajectory" output="log" clear_params="true">
             <param name="alignment_type" type="str" value="posyaw" />
             <param name="path_gt"        type="str" value="$(arg path_gt)" />
         </node>
-    </group>
+    </group> -->
 
 
 </launch>

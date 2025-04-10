@@ -12,4 +12,4 @@ docker run \
 -v ~/Desktop/progettopercro/bagfiles:/root/bagfiles \
 -v ~/Desktop/progettopercro/scripts:/root/scripts \
 --net=host \
-coreresearch:openvins2 bash
+coreresearch:openvins bash
