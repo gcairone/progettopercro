@@ -79,3 +79,29 @@ cd ~/catkin_ws_ov/src/open_vins/ov_msckf/launch
 rviz -d display.rviz
 ```
 Per far partire l'odometria bisogna dare un jerk minimo all'HW. 
+
+
+
+
+
+# Lattepanda
+
+╰─ sigma@sigma-LattePanda-Sigma » lscpu
+Architecture:             x86_64
+  CPU op-mode(s):         32-bit, 64-bit
+  Address sizes:          39 bits physical, 48 bits virtual
+  Byte Order:             Little Endian
+CPU(s):                   16
+  On-line CPU(s) list:    0-15
+Vendor ID:                GenuineIntel
+  Model name:             13th Gen Intel(R) Core(TM) i5-1340P
+    CPU family:           6
+    Model:                186
+    Thread(s) per core:   2
+    Core(s) per socket:   12
+    Socket(s):            1
+    Stepping:             2
+    CPU(s) scaling MHz:   13%
+    CPU max MHz:          4600.0000
+    CPU min MHz:          400.0000
+    BogoMIPS:             4377.60
