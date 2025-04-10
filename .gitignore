@@ -2,8 +2,8 @@ bagfiles/*
 catkin_ws_ov/build/*
 catkin_ws_ov/logs/*
 catkin_ws_ov/devel/.private/*
-catkin_ws_ov/src/openvins/docs/*
-catkin_ws_ov/src/openvins/ov_data/*
+catkin_ws_ov/src/open_vins/docs/*
+catkin_ws_ov/src/open_vins/ov_data/*
 scripts/images/*
 scripts/images_2/*
 scripts/images_prof/*
