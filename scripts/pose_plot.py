@@ -41,7 +41,7 @@ def plot_positions(positions, x_range=None, y_range=None, z_range=None):
     
     plt.show()
 
-yaml_file = "poses_path_2.yaml"  
+yaml_file = "poses_path_3.yaml"  
 yaml_data = load_yaml(yaml_file)
 
 positions = extract_positions(yaml_data)
