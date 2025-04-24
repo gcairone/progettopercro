@@ -1,7 +1,6 @@
 import yaml
 import matplotlib.pyplot as plt
 
-# Carica il file YAML
 def load_aruco_map(file_path):
     with open(file_path, 'r') as f:
         data = yaml.safe_load(f)
