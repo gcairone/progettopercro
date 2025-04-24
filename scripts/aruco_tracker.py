@@ -11,9 +11,7 @@ import cv2.aruco as aruco
 with open('camera_calibration.yaml', 'r') as file:
     data = yaml.safe_load(file)
 
-# Estrai i dati e convertili in numpy arraysself.
 cam_topic = "/alphasense_driver_ros/cam2"
-# cam_topic = "/usb_camera/image_raw"
 
 def load_marker_map(yaml_file):
     with open(yaml_file, 'r') as f:
@@ -143,7 +141,6 @@ class ArucoTracker:
             aruco.drawDetectedMarkers(frame, corners, ids)
             R_t_list = []
             tvec_list = []
-            # i = 0
             for i in range(len(ids)):
                 rvec, tvec, _ = estimatePoseSingleMarkers(
                     corners[i], self.marker_length, camera_matrix, dist_coeffs
@@ -181,20 +178,6 @@ class ArucoTracker:
         cv2.waitKey(1)
 
 
-"""
-        if key == ord('a') and ids is not None:  
-            print("PREMUTO a")
-            timestamp = msg.header.stamp.to_sec()
-            with open('logs/aruco_corners_2.txt', 'a') as f:
-                f.write(f"Timestamp: {timestamp:.6f} sec\n")
-                for i in range(len(ids)):
-                    f.write(f"Marker ID: {ids[i]}\n")
-                    corners_str = np.array2string(corners[i], separator=', ')
-                    f.write(f"Corners:\n{corners_str}\n")
-                    f.write("-" * 40 + "\n")
-            rospy.loginfo(f"Corners salvati con timestamp {timestamp:.6f}")
-
-"""
 if __name__ == "__main__":
     try:
         ArucoTracker()
