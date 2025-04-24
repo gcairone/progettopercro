@@ -2,28 +2,13 @@ import numpy as np
 import yaml
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize_scalar
-"""
-per la prova 2:
-    - RMS senza scala 4.375 m
-    - RMS con scala 0.831 -> 1.289 m
-"""
-"""
-per la prova 3:
-    - RMS senza scala 2.057
-    - RMS con scala 0.930 -> 1.147 m
 
-
-    - Errore finale -> 1.88 
-
-"""
 def optimize_uniform_scale(est_positions, est_times, gt_positions, gt_times):
     def error_for_scale(s):
         scaled_positions = est_positions * s
         errors = compute_position_error(gt_times, gt_positions, est_times, scaled_positions)
         return np.mean(errors**2)
-
     res = minimize_scalar(error_for_scale, bounds=(0.5, 1.0), method='bounded')
-
     return res.x, res.fun
 
 def transform_trajectory(positions, alpha=0.0, scale=(1.0, 1.0, 1.0), translation=(0.0, 0.0, 0.0)):
@@ -37,11 +22,9 @@ def transform_trajectory(positions, alpha=0.0, scale=(1.0, 1.0, 1.0), translatio
         S = np.diag([scale, scale, scale])
     else:
         S = np.diag(scale)
-
-    transformed = (Rz @ positions.T).T         # Rotazione
-    transformed = (S @ transformed.T).T        # Scala
-    transformed += np.array(translation)       # Traslazione
-
+    transformed = (Rz @ positions.T).T         
+    transformed = (S @ transformed.T).T      
+    transformed += np.array(translation)     
     return transformed
 
 
@@ -97,6 +80,9 @@ def plot_trajectories(est_positions, gt_positions):
     plt.title('Traiettorie')
     plt.show()
 
+
+
+
 if __name__ == "__main__":
     i = 3
     alpha = np.deg2rad(90)  
@@ -106,23 +92,19 @@ if __name__ == "__main__":
     est_times, est_positions = read_estimated_trajectory(f"logs/pose{i}_log.txt")
     gt_times, gt_positions = read_ground_truth(f"poses_path_{i}.yaml")
 
-    # --- Errore e visualizzazione iniziale ---
     errors_before = compute_position_error(gt_times, gt_positions, est_times, est_positions)
     print(f"[ORIGINALE] Errore medio di posizione: {np.mean(errors_before):.3f} m")
     print("Plot: traiettorie originali (senza trasformazioni)")
     plot_trajectories(est_positions, gt_positions)
 
-    # --- PRIMA FASE: Rotazione + Traslazione ---
     alpha = np.deg2rad(165)                # rotazione di 30 gradi intorno a Z
     translation = (14.0, 12.0, 0.0)         # traslazione
     est_positions_rot_trans = transform_trajectory(est_positions, alpha=alpha, translation=translation)
-
     errors_rot_trans = compute_position_error(gt_times, gt_positions, est_times, est_positions_rot_trans)
     print(f"[ROT+TRASL] Errore medio di posizione: {np.sqrt(np.mean(errors_rot_trans**2)):.3f} m")
     print("Plot: traiettorie con rotazione + traslazione")
     plot_trajectories(est_positions_rot_trans, gt_positions)
 
-    # --- SECONDA FASE: aggiunta della Scala ---
     scale = (0.93, 0.93, 0.93)               # ingrandimento lungo gli assi
     est_positions_full = transform_trajectory(est_positions, alpha=alpha, translation=translation, scale=scale)
 
